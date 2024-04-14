@@ -43,14 +43,12 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 BOARD_CANT_REALLOCATE_OMX_BUFFERS := true
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/scx35-common/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_TAGS_OFFSET := 0x01d88000
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
+BOARD_MKBOOTIMG_ARGS := --dt device/samsung/scx35-common/dt.img
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
