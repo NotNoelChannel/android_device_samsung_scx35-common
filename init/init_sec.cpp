@@ -43,6 +43,9 @@ enum device_variant {
 	G361H,
 	G531BT,
 	G531H,
+	J100H,
+	J110H,
+	J110L
 };
 
 device_variant match(std::string bl)
@@ -53,6 +56,12 @@ device_variant match(std::string bl)
                 return G360HU;
         } else if (bl.find("G361H") != std::string::npos) {
                 return G361H;
+        } else if (bl.find("J100H") != std::string::npos) {
+                return J100H;
+        } else if (bl.find("J110H") != std::string::npos) {
+                return J110H;
+        } else if (bl.find("J110L") != std::string::npos) {
+                return J110L;
         } else if (bl.find("G531BT") != std::string::npos) {
                 return G531BT;
         } else {
@@ -85,6 +94,21 @@ void vendor_load_properties()
 		        /* coreprimeve3gxx */
 		        property_set("ro.product.model", "SM-G361H");
 		        property_set("ro.product.device", "coreprimeve3g");
+			break;
+		case J100H:
+		        /* j13g */
+		        property_set("ro.product.model", "SM-J100H");
+		        property_set("ro.product.device", "j13g");
+			break;
+		case J110H:
+		        /* j1pop3g OR j1ace3g. different drivers */
+		        property_set("ro.product.model", "SM-J110H");
+		        property_set("ro.product.device", "j1pop3g");
+			break;
+		case J110L:
+		        /* j1pop3g OR j1ace3g */
+		        property_set("ro.product.model", "SM-J110L");
+		        property_set("ro.product.device", "j1pop3g");
 			break;
 		case G531BT:
 		        /* grandprimeve3gdtv */
