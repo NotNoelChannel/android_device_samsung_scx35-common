@@ -78,6 +78,10 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/scx35-common/include
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.sc8830
 
+# Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_sec
+
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_NO_CHARGER_LED := true
